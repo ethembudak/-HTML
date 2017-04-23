@@ -8,7 +8,7 @@
     <meta name="author" content="">
     <link rel="icon" href="../../favicon.ico">
 
-    <title>MOPAŞ</title>
+    <title>Mopaş'a Hoş Geldiniz!</title>
 
     <!-- Bootstrap core CSS -->
     <link href="assets/project.min.css" rel="stylesheet">
@@ -21,3 +21,6 @@
   </head>
 
   <body>
+	
+		<!-- Top Navigation -->
+		<?php include 'widget/nav.php';?>

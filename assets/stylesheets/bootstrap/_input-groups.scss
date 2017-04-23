@@ -169,3 +169,62 @@
     }
   }
 }
+
+/* Enable absolute positioning */
+.inner-addon { 
+	position: relative;
+		
+	.glyphicon {
+		position: absolute;
+	  padding: 10px;
+	  pointer-events: none;
+	}
+}
+
+/* Align Icon */
+.left-addon {
+	input {
+		padding-left: 30px;
+	}
+} 
+.right-addon {
+	.glyphicon { 
+		right: 0px;
+	}
+	input {
+		padding-right: 30px;
+	}
+}
+
+/* Header Search Input */
+.navbar-form {
+	
+	.input-group {
+		width: 100%;
+		
+		.glyphicon {
+			z-index: 4;
+		}
+		
+		.search-input {
+			border-radius: 20px 0 0 20px !important;
+		}
+
+		.btn-search {
+			background-color: #008DE2;
+			border-radius: 0 20px 20px 0;
+			color: #FFF;
+			height: 34px;
+			outline: none;
+			padding: 6px 20px;
+
+			&:hover {
+				background-color: #42569F;
+			}
+
+			&:focus {
+				outline: none;
+			}
+		}
+	}
+}

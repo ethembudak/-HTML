@@ -310,8 +310,8 @@ th {
 }
 @font-face {
   font-family: 'Glyphicons Halflings';
-  src: url("../fonts/bootstrap/glyphicons-halflings-regular.eot");
-  src: url("../fonts/bootstrap/glyphicons-halflings-regular.eot?#iefix") format("embedded-opentype"), url("../fonts/bootstrap/glyphicons-halflings-regular.woff2") format("woff2"), url("../fonts/bootstrap/glyphicons-halflings-regular.woff") format("woff"), url("../fonts/bootstrap/glyphicons-halflings-regular.ttf") format("truetype"), url("../fonts/bootstrap/glyphicons-halflings-regular.svg#glyphicons_halflingsregular") format("svg");
+  src: url("fonts/bootstrap/glyphicons-halflings-regular.eot");
+  src: url("fonts/bootstrap/glyphicons-halflings-regular.eot?#iefix") format("embedded-opentype"), url("fonts/bootstrap/glyphicons-halflings-regular.woff2") format("woff2"), url("fonts/bootstrap/glyphicons-halflings-regular.woff") format("woff"), url("fonts/bootstrap/glyphicons-halflings-regular.ttf") format("truetype"), url("fonts/bootstrap/glyphicons-halflings-regular.svg#glyphicons_halflingsregular") format("svg");
 }
 .glyphicon {
   position: relative;
@@ -4492,6 +4492,53 @@ tbody.collapse.in {
   margin-left: -1px;
 }
 
+/* Enable absolute positioning */
+.inner-addon {
+  position: relative;
+}
+.inner-addon .glyphicon {
+  position: absolute;
+  padding: 10px;
+  pointer-events: none;
+}
+
+/* Align Icon */
+.left-addon input {
+  padding-left: 30px;
+}
+
+.right-addon .glyphicon {
+  right: 0px;
+}
+.right-addon input {
+  padding-right: 30px;
+}
+
+/* Header Search Input */
+.navbar-form .input-group {
+  width: 100%;
+}
+.navbar-form .input-group .glyphicon {
+  z-index: 4;
+}
+.navbar-form .input-group .search-input {
+  border-radius: 20px 0 0 20px !important;
+}
+.navbar-form .input-group .btn-search {
+  background-color: #008DE2;
+  border-radius: 0 20px 20px 0;
+  color: #FFF;
+  height: 34px;
+  outline: none;
+  padding: 6px 20px;
+}
+.navbar-form .input-group .btn-search:hover {
+  background-color: #42569F;
+}
+.navbar-form .input-group .btn-search:focus {
+  outline: none;
+}
+
 .nav {
   margin-bottom: 0;
   padding-left: 0;
@@ -4790,7 +4837,9 @@ tbody.collapse.in {
   padding: 15px 15px;
   font-size: 18px;
   line-height: 20px;
-  height: 50px;
+  margin-left: 0 !important;
+  margin-top: 10px;
+  /*height: $navbar-height;*/
 }
 .navbar-brand:hover, .navbar-brand:focus {
   text-decoration: none;
@@ -5011,6 +5060,11 @@ tbody.collapse.in {
     margin-right: 0;
   }
 }
+@media (max-width: 768px) {
+  .navbar-brand {
+    margin-left: 10px !important;
+  }
+}
 .navbar-default {
   background-color: #f8f8f8;
   border-color: #e7e7e7;
@@ -5091,11 +5145,14 @@ tbody.collapse.in {
 }
 
 .navbar-inverse {
-  background-color: #222;
-  border-color: #090909;
+  background-color: #262251;
+  border-color: #15132d;
 }
 .navbar-inverse .navbar-brand {
-  color: #9d9d9d;
+  background: url("images/logo.png") no-repeat 0 0;
+  background-size: contain;
+  min-width: 120px;
+  color: #fff;
 }
 .navbar-inverse .navbar-brand:hover, .navbar-inverse .navbar-brand:focus {
   color: #fff;
@@ -5105,15 +5162,15 @@ tbody.collapse.in {
   color: #9d9d9d;
 }
 .navbar-inverse .navbar-nav > li > a {
-  color: #9d9d9d;
+  color: #fff;
 }
 .navbar-inverse .navbar-nav > li > a:hover, .navbar-inverse .navbar-nav > li > a:focus {
   color: #fff;
-  background-color: transparent;
+  background-color: #008de2;
 }
 .navbar-inverse .navbar-nav > .active > a, .navbar-inverse .navbar-nav > .active > a:hover, .navbar-inverse .navbar-nav > .active > a:focus {
   color: #fff;
-  background-color: #090909;
+  background-color: #15132d;
 }
 .navbar-inverse .navbar-nav > .disabled > a, .navbar-inverse .navbar-nav > .disabled > a:hover, .navbar-inverse .navbar-nav > .disabled > a:focus {
   color: #444;
@@ -5130,43 +5187,46 @@ tbody.collapse.in {
 }
 .navbar-inverse .navbar-collapse,
 .navbar-inverse .navbar-form {
-  border-color: #101010;
+  border-color: #1a1738;
 }
 .navbar-inverse .navbar-nav > .open > a, .navbar-inverse .navbar-nav > .open > a:hover, .navbar-inverse .navbar-nav > .open > a:focus {
-  background-color: #090909;
+  background-color: #15132d;
   color: #fff;
 }
 @media (max-width: 767px) {
   .navbar-inverse .navbar-nav .open .dropdown-menu > .dropdown-header {
-    border-color: #090909;
+    border-color: #15132d;
   }
   .navbar-inverse .navbar-nav .open .dropdown-menu .divider {
-    background-color: #090909;
+    background-color: #15132d;
   }
   .navbar-inverse .navbar-nav .open .dropdown-menu > li > a {
-    color: #9d9d9d;
+    color: #fff;
   }
   .navbar-inverse .navbar-nav .open .dropdown-menu > li > a:hover, .navbar-inverse .navbar-nav .open .dropdown-menu > li > a:focus {
     color: #fff;
-    background-color: transparent;
+    background-color: #008de2;
   }
   .navbar-inverse .navbar-nav .open .dropdown-menu > .active > a, .navbar-inverse .navbar-nav .open .dropdown-menu > .active > a:hover, .navbar-inverse .navbar-nav .open .dropdown-menu > .active > a:focus {
     color: #fff;
-    background-color: #090909;
+    background-color: #15132d;
   }
   .navbar-inverse .navbar-nav .open .dropdown-menu > .disabled > a, .navbar-inverse .navbar-nav .open .dropdown-menu > .disabled > a:hover, .navbar-inverse .navbar-nav .open .dropdown-menu > .disabled > a:focus {
     color: #444;
     background-color: transparent;
   }
 }
+.navbar-inverse .cart-link {
+  background-color: #F4AE27;
+}
 .navbar-inverse .navbar-link {
-  color: #9d9d9d;
+  color: #fff;
 }
 .navbar-inverse .navbar-link:hover {
   color: #fff;
 }
 .navbar-inverse .btn-link {
-  color: #9d9d9d;
+  color: #fff;
 }
 .navbar-inverse .btn-link:hover, .navbar-inverse .btn-link:focus {
   color: #fff;
@@ -7340,14 +7400,6 @@ body {
 }
 
 /*
- * Global add-ons
- */
-.sub-header {
-  padding-bottom: 10px;
-  border-bottom: 1px solid #eee;
-}
-
-/*
  * Top navigation
  * Hide default border to remove 1px line.
  */
@@ -7355,9 +7407,7 @@ body {
   border: 0;
 }
 
-/*
- * Sidebar
- */
+/*  Sidebar */
 /* Hide for mobile, show later */
 .sidebar {
   display: none;
@@ -7366,12 +7416,12 @@ body {
 @media (min-width: 768px) {
   .sidebar {
     position: fixed;
-    top: 51px;
+    top: 50px;
     bottom: 0;
     left: 0;
     z-index: 1000;
     display: block;
-    padding: 20px;
+    padding: 0 20px 20px 20px;
     overflow-x: hidden;
     overflow-y: auto;
     /* Scrollable contents if viewport is shorter than content. */
@@ -7399,25 +7449,15 @@ body {
   background-color: #428bca;
 }
 
-/*
- * Main content
- */
+/*  Main content */
 .main {
   padding: 20px;
 }
 .main .page-header {
-  margin-top: 0;
+  margin-top: 20px;
 }
 
-@media (min-width: 768px) {
-  .main {
-    padding-right: 40px;
-    padding-left: 40px;
-  }
-}
-/*
- * Placeholder dashboard ideas
- */
+/*  Placeholder dashboard ideas */
 .placeholders {
   margin-bottom: 30px;
   text-align: center;

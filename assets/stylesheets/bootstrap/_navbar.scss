@@ -165,7 +165,9 @@
   padding: $navbar-padding-vertical $navbar-padding-horizontal;
   font-size: $font-size-large;
   line-height: $line-height-computed;
-  height: $navbar-height;
+	margin-left: 0 !important;
+	margin-top: 10px;
+  /*height: $navbar-height;*/
 
   &:hover,
   &:focus {
@@ -393,6 +395,12 @@
 // Alternate navbars
 // --------------------------------------------------
 
+@media (max-width: 768px) {
+  .navbar-brand {
+		margin-left: 10px !important;
+	}
+}
+
 // Default navbar
 .navbar-default {
   background-color: $navbar-default-bg;
@@ -533,6 +541,9 @@
   border-color: $navbar-inverse-border;
 
   .navbar-brand {
+		background: url('images/logo.png') no-repeat 0 0;
+		background-size: contain;
+		min-width: 120px;
     color: $navbar-inverse-brand-color;
     &:hover,
     &:focus {
@@ -637,6 +648,10 @@
       }
     }
   }
+
+	.cart-link {
+		background-color: #F4AE27;
+	}
 
   .navbar-link {
     color: $navbar-inverse-link-color;
