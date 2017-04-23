@@ -1,0 +1,28 @@
+{
+  "name": "mopas",
+  "version": "1.0.0",
+  "description": "mopas frontend",
+  "main": "index.js",
+  "dependencies": {
+    "bootstrap": "^3.3.7",
+    "grunt": "^1.0.1"
+  },
+  "devDependencies": {
+    "grunt": "^1.0.1",
+    "grunt-contrib-concat": "^1.0.1",
+    "grunt-contrib-cssmin": "^2.1.0",
+    "grunt-contrib-sass": "^1.0.0",
+    "grunt-contrib-uglify": "^2.3.0",
+    "grunt-contrib-watch": "^1.0.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "mopas",
+    "frontend",
+    "bootstrap"
+  ],
+  "author": "mobilazor",
+  "license": "ISC"
+}
