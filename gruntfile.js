@@ -24,22 +24,61 @@ module.exports = function (grunt) {
 
         //Task for js Minification
         uglify: {
-
+            options: {
+                //  banner for inserting at the top of the result
+                banner: '/*! <%= pkg.name %> <%= grunt.template.today("dd-mm-yyyy") %> */\n'
+            },
+            build: {
+                src: ['assets/project.js'],
+                dest: 'assets/project.min.js'
+            }
         },
 
         //Task for change tracker
         watch:{
-
+            scripts: {
+                files: ['assets/javascripts/**/*.js'],
+                tasks: ['concat','uglify']
+            },
+            styles: {
+                files: ['assets/stylesheets/**/*.scss'],
+                tasks: ['sass','cssmin']
+            }
         },
 
         //Sass compiler
         sass: {
-
+            dist: {
+                options: {
+                    style: 'expanded'
+                },
+                files: {
+                    'assets/project.css': 'assets/stylesheets/project.scss'
+                }
+            }
         },
 
         // Minify CSS
         cssmin: {
-
-        }
+            target: {
+                files: [{
+                    expand: true,
+                    cwd: 'assets',
+                    src: ['project.css'],
+                    dest: 'assets',
+                    ext: '.min.css'
+                }]
+            }
+        },
     });
+
+	//The Required Plug-Ins which will be loaded for Task
+	grunt.loadNpmTasks('grunt-contrib-concat');
+	grunt.loadNpmTasks('grunt-contrib-uglify');
+	grunt.loadNpmTasks('grunt-contrib-watch');
+	grunt.loadNpmTasks('grunt-contrib-sass');
+	grunt.loadNpmTasks('grunt-contrib-cssmin');
+    
+	//The array of default tasks
+	grunt.registerTask('default', ['concat', 'uglify','sass','cssmin','watch']);
 };
